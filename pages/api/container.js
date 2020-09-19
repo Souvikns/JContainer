@@ -6,9 +6,15 @@ const handler = nextConnect()
 handler
     .use(middleware)
     .get(async (req, res) => {
-        let doc = await req.db.collection('containers').findOne()
 
-        return res.json(doc)    
+        try {
+            let doc = await req.db.collection('containers').findOne()
+            return res.json(doc)
+        } catch (error) {
+            return res.send(error)
+        }
+
+
     })
 
 
