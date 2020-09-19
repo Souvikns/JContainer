@@ -1,7 +1,9 @@
 const Index = props => {
 
     return <>
-    <h1>Hello World</h1>
+        <center>
+            <h1>Create your own data storage service</h1>
+        </center>
     </>
 }
 
