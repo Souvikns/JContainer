@@ -1,4 +1,11 @@
-export default (req,res) => {
+import nc from 'next-connect'
 
-    res.status(200).json({name: "Souvik"})
-}
+
+const handler = nc()
+
+handler
+    .get(async (req, res) => {
+        return res.send("Hello")
+    })
+
+export default handler
