@@ -1,4 +1,7 @@
 import nextConnect from 'next-connect'
+import {
+    createDoc
+} from '../../../controller/documents'
 
 // importing middlewares
 import database from '../../../middlewares/db'
@@ -12,22 +15,7 @@ handler
     .get(async (req,res) => {
         return res.json(req.db)
     })
-    .post(async (req, res) => {
-        let { document_name } = req.query
-        let { doc } = req.body
-
-        try {
-            let response = await req.db.collection(document_name)
-            .insertOne(doc)
-
-            return res.status(201).json(response.ops)
-        } catch (error) {
-            console.log(error)
-            return res.status(404).send(error)    
-        }
-
-
-    })
+    .post(createDoc)
     .patch()
     .delete()
 
