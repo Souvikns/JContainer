@@ -1,7 +1,8 @@
 import nextConnect from 'next-connect'
 import {
     createDoc,
-    findDoc
+    findDoc,
+    updateDoc
 } from '../../../controller/documents'
 
 // importing middlewares
@@ -14,5 +15,6 @@ handler
     .use(database)
     .get(findDoc)
     .post(createDoc)
+    .patch(updateDoc)
 
 export default handler
