@@ -45,6 +45,23 @@ const updateDoc = async (req, res) => {
         return res.status(200).json(response.value)
 
     } catch (error) {
+        return res.status(404).send(error)
+    }
+
+}
+
+const deleteDoc = async (req, res) => {
+    const { doc } = req.query
+    const { id } = req.body
+
+    let oId = new ObjectId(id)
+
+    try {
+        let response = await req.db.collection(doc)
+            .findOneAndDelete({ _id: oId })
+
+        return res.status(200).json(response.value)
+    } catch (error) {
         console.log(error)
         return res.status(404).send(error)
     }
@@ -55,5 +72,6 @@ const updateDoc = async (req, res) => {
 export {
     createDoc,
     findDoc,
-    updateDoc
+    updateDoc,
+    deleteDoc
 }
