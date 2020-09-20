@@ -1,5 +1,7 @@
 # JContainer
 
+Setup your own **REST API** *data storage* service with just one click. Go serverless with **JContainer**. 
+
 
 ## Instructions 
 
