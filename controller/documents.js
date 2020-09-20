@@ -1,4 +1,6 @@
+import md from 'mongodb'
 
+const ObjectId = md.ObjectId
 
 const createDoc = async (req, res) => {
     let { doc } = req.query
@@ -32,15 +34,18 @@ const findDoc = async (req, res) => {
 
 const updateDoc = async (req, res) => {
     const { doc } = req.query
-    const { search, data, options } = req.body
+    const { id, data, options } = req.body
+
+    let oId = new ObjectId(id)
 
     try {
         let response = await req.db.collection(doc)
-            .updateOne(search, data, options)
+            .findOneAndUpdate({ _id: oId }, { $set: data }, options || {})
 
-        return res.status(200).json(response)
+        return res.status(200).json(response.value)
 
     } catch (error) {
+        console.log(error)
         return res.status(404).send(error)
     }
 
