@@ -1,6 +1,7 @@
 import nextConnect from 'next-connect'
 import {
-    createDoc
+    createDoc,
+    findDoc
 } from '../../../controller/documents'
 
 // importing middlewares
@@ -9,15 +10,9 @@ import apiCheck from '../../../middlewares/apistring'
 
 const handler = nextConnect()
 
-
 handler
     .use(database)
-    .get(async (req,res) => {
-        return res.json(req.db)
-    })
+    .get(findDoc)
     .post(createDoc)
-    .patch()
-    .delete()
-
 
 export default handler

@@ -1,12 +1,12 @@
 
 
 const createDoc = async (req, res) => {
-    let { document_name } = req.query
-    let { doc } = req.body
+    let { doc } = req.query
+    let { data } = req.body
 
     try {
-        let response = await req.db.collection(document_name)
-            .insertOne(doc)
+        let response = await req.db.collection(doc)
+            .insertOne(data)
 
         return res.status(201).json(response.ops)
     } catch (error) {
@@ -16,5 +16,22 @@ const createDoc = async (req, res) => {
 
 }
 
+const findDoc = async (req, res) => {
+    const { doc } = req.query
 
-export { createDoc }
+    try {
+        
+        let response = await req.db.collection(doc).find().toArray()
+
+        return res.status(200).json(response)
+        
+    } catch (error) {
+        return res.status(404).json(error)
+    }
+}
+
+
+export {
+    createDoc,
+    findDoc
+}
