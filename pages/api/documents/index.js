@@ -16,8 +16,6 @@ handler
         let { document_name } = req.query
         let { doc } = req.body
 
-        console.log(doc)
-
         try {
             let response = await req.db.collection(document_name)
             .insertOne(doc)
