@@ -1,9 +1,9 @@
+import { Auth } from '../components/auth'
+
 const Index = () => {
 
     return <>
-        <center>
-            <h1>Create your own data storage service</h1>
-        </center>
+        <Auth />
     </>
 }
 
