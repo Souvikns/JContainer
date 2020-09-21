@@ -1,31 +1,23 @@
 import { Auth } from '../components/auth'
 
-const Check = props => {
-    let isLoggedIn = localStorage.getItem('isLoggedIn')
+const Index = ({data, isLoggedIn}) => {
 
     return <>
-        {((isLoggedIn)? null: <Auth />)}
-    </>
-
-}
-
-const Index = ({ data }) => {
-    // let isLoggedIn = localStorage.getItem('isLoggedIn')
-
-    return <>
-        <Check />
-        {data}
+    {((isLoggedIn)? null: <Auth />)}
+    {data}
     </>
 }
 
-export async function getServerSideProps(context) {
-    const { check } = require('../lib/test')
+export async function getServerSideProps(context){
+    const {check} = require('../lib/test')
     let data = check('Souvik')
 
+    let isLoggedIn = localStorage.getItem('isLoggedIn')
 
     return {
         props: {
-            data
+            data,
+            isLoggedIn
         }
     }
 }
