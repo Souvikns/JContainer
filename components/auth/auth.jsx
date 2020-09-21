@@ -5,6 +5,9 @@ const Auth = () => {
     return <>
         <center>
             <h1>Login/Signup</h1>
+            <p>
+                If this is the first time setting up, set your passcode. 
+            </p>
         </center>
 
         <center>
