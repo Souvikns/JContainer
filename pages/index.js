@@ -1,10 +1,10 @@
 import { Auth } from '../components/auth'
 
 const Index = ({data}) => {
-    let isLoggedIn = localStorage.getItem('isLoggedIn')
+    // let isLoggedIn = localStorage.getItem('isLoggedIn')
 
     return <>
-    {((isLoggedIn)? null: <Auth />)}
+    {/* {((isLoggedIn)? null: <Auth />)} */}
     {data}
     </>
 }
