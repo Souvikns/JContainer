@@ -8,7 +8,7 @@ const Index = ({data, isLoggedIn}) => {
     </>
 }
 
-export async function getServerSideProps(context){
+export async function getStaticProps(context){
     const {check} = require('../lib/test')
     let data = check('Souvik')
 
