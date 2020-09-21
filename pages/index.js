@@ -1,10 +1,25 @@
 import { Auth } from '../components/auth'
 
-const Index = () => {
+const Index = ({data, isLoggedIn}) => {
 
     return <>
-        <Auth />
+    {((isLoggedIn)? null: <Auth />)}
+    {data}
     </>
+}
+
+export async function getStaticProps(context){
+    const {check} = require('../lib/test')
+    let data = check('Souvik')
+
+    let isLoggedIn = localStorage.getItem('isLoggedIn')
+
+    return {
+        props: {
+            data,
+            isLoggedIn
+        }
+    }
 }
 
 export default Index
