@@ -14,8 +14,9 @@ const Auth = () => {
             data: {
                 passcode: passCode
             }
-        }).then(data => {
-            localStorage.setItem('JC-passcode', data.data)
+        }).then(res => {
+            localStorage.setItem('JC-passcode', res.data.code)
+            localStorage.setItem('JC-api-key', res.data.api_key)
             localStorage.setItem('loggedIn', true)
             router.reload()
         }).catch(err => {
