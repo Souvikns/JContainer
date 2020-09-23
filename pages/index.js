@@ -1,18 +1,16 @@
 import { Auth } from '../components/auth'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 const Index = props => {
 
-    let loggedIn;
+    const [loggedIn, setLog] = useState(null)
 
     useEffect(() => {
-        loggedIn = localStorage.getItem('loggedIn')
-    })
-
-    
+        setLog(localStorage.getItem('loggedIn'))
+    },[])
 
     return <>
-        {((loggedIn)? null: <Auth />)}
+        {((loggedIn)? <></>: <Auth />)}
     </>
 }
 
