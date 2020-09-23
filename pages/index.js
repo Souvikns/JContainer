@@ -1,6 +1,8 @@
 import { Auth } from '../components/auth'
 import { useEffect, useState } from 'react'
 
+import { Landing } from '../components/app'
+
 const Index = props => {
 
     const [loggedIn, setLog] = useState(null)
@@ -10,7 +12,7 @@ const Index = props => {
     }, [])
 
     return <>
-        {((loggedIn) ? <></> : <Auth />)}
+        {((loggedIn) ? <Landing /> : <Auth />)}
     </>
 }
 
