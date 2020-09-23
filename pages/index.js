@@ -1,5 +1,5 @@
 import { Auth } from '../components/auth'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 const Index = props => {
 
@@ -7,10 +7,10 @@ const Index = props => {
 
     useEffect(() => {
         setLog(localStorage.getItem('loggedIn'))
-    },[])
+    }, [])
 
     return <>
-        {((loggedIn)? <></>: <Auth />)}
+        {((loggedIn) ? <></> : <Auth />)}
     </>
 }
 
