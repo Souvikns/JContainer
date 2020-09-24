@@ -1,6 +1,9 @@
 # JContainer
 
 [![GitHub license](https://img.shields.io/github/license/Souvikns/JContainer)](https://github.com/Souvikns/JContainer/blob/master/LICENSE)
+![Lines of code](https://img.shields.io/tokei/lines/github/Souvikns/JContainer)
+![GitHub top language](https://img.shields.io/github/languages/top/Souvikns/JContainer)
+![David](https://img.shields.io/david/Souvikns/JContainer)
 
 
 Setup your own **REST API** *data storage* service with just one click. Go serverless with **JContainer**. 
