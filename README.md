@@ -11,7 +11,7 @@ Setup your own **REST API** *data storage* service with just one click. Go serve
 
 ## Instructions 
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FSouvikns%2FJContainer&env=MONGO_URI,DB_NAME)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FSouvikns%2FJContainer&env=MONGO_URI,DB_NAME) [![Join the chat at https://gitter.im/Souvikns/Jcontainer](https://badges.gitter.im/Souvikns/Jcontainer.svg)](https://gitter.im/Souvikns/Jcontainer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 - Click on the deploy button
 - Add your Enviorment variables
