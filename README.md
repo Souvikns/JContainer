@@ -19,3 +19,15 @@ Setup your own **REST API** *data storage* service with just one click. Go serve
     - Add mongodb url that looks like this `mongodb+srv://<username>:<password>@cluster0.wudu9.mongodb.net/<database name>?retryWrites=true&w=majority` in `MONGO_URI` 
     - Add database name in place of `DB_NAME`. 
 - Voila! your own rest API data storage, use it well. 
+
+--- 
+## Contributing 
+This application is built using **nextjs**. To contribute to this repo please follow the following setps
+
+- You need to have [nodejs](https://nodejs.org/en/)
+- Fork this repo to successfully make a **PR**
+- Clone the repo to your local computer
+- Install the dependencies using the command `npm install` 
+- After making changes, you can make a **PR** to the `development` branch.
+
+---
