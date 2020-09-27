@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 import { Landing } from '../components/app'
 
-const Index = props => {
+const Index = () => {
 
     const [loggedIn, setLog] = useState(null)
 
@@ -14,6 +14,20 @@ const Index = props => {
     return <>
         {((loggedIn) ? <Landing /> : <Auth />)}
     </>
+}
+
+export async function getStaticProps(context) {
+
+    const content = await import(`../markdown/index.md`)
+    
+    const data = content.default
+
+    
+    return {
+        props: {
+            data
+        }
+    }
 }
 
 
