@@ -20,8 +20,10 @@
     "next": "^9.5.3",
     "next-connect": "^0.9.0",
     "randomstring": "^1.1.5",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.49"
