@@ -14,7 +14,7 @@ const handler = nextConnect()
 
 handler
     .use(database)
-    use(apiCheck)
+    .use(apiCheck)
     .get(findDoc)
     .post(createDoc)
     .patch(updateDoc)
