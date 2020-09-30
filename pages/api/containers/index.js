@@ -2,6 +2,10 @@ import nextConnect from 'next-connect'
 import database from '../../../middlewares/db'
 import apikeyCheck from '../../../middlewares/apistring'
 
+import {
+    getAllContainer
+} from '../../../controller/container'
+
 const handler = nextConnect()
 
 
@@ -11,7 +15,7 @@ handler
     /**
      * To get the list of containers
      */
-    .get()
+    .get(getAllContainer)
     /**
      * To create a new container
      */
