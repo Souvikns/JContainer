@@ -1,30 +1,32 @@
 import Holder from './holder'
-import {useState, useEffect} from 'react'
-import Axios from 'axios'
+import { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { fetchContainersAsync } from '../../redux/actions/container'
 
-const Index = () => {
-    let [containers, setContainers] = useState([])
+const Index = props => {
 
     useEffect(() => {
-        Axios({
-            method: 'GET',
-            url: '/api/containers',
-            headers: {
-                "api_key": localStorage.getItem('JC-api-key')
-            }
-        }).then(res => {
-            console.log(res)
-            setContainers(res.data)
-        }).catch(err => {
-            console.log(err)
-        })
-    },[])
+        props.fetchContainer()
+    }, [])
 
     return (
         <div>
-            {containers.map(el => <Holder name={el.name} />)}
+            {props.cons.map(el => <Holder name={el.name} />)}
         </div>
     )
 }
 
-export default Index
+const mapStateToProps = state => {
+    return {
+        cons: state.container.cons
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+
+    return {
+        fetchContainer: () => { dispatch(fetchContainersAsync()) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index)
