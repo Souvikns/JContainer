@@ -8,6 +8,9 @@ import {
     Container
 } from '@material-ui/core'
 
+// importing custom components 
+import { Navbar } from '../components/navbar'
+
 const Index = () => {
 
     const [loggedIn, setLog] = useState(null)
@@ -17,6 +20,7 @@ const Index = () => {
     }, [])
 
     return <>
+        <Navbar />
         {((loggedIn) ? <Landing /> : <Auth />)}
 
         <Container>
