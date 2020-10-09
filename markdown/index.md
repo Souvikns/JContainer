@@ -1,7 +1,1 @@
-# Code 
-
-**Hello world**
-
-```
-Hello World
-```
+# Welcome to the documentation of your own data storage. 
